@@ -21,7 +21,6 @@ public class PanelConsultar extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private JComboBox comboBoxProductos;
-	ArrayList<Producto> misProductos = new ArrayList<>();
 	DefaultTableModel modeloTabla = new DefaultTableModel();
 
 	/**
@@ -33,9 +32,10 @@ public class PanelConsultar extends JPanel {
 		comboBoxProductos = new JComboBox();
 		comboBoxProductos.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
+				ArrayList<Producto> arrProductos = new ArrayList<>();
 				ConectandoBBDD bd = new ConectandoBBDD();
-				misProductos = bd.consultarProductoPorNombre(comboBoxProductos.getSelectedItem().toString());
-				cargaTabla();
+				arrProductos = bd.consultarProductoPorNombre(comboBoxProductos.getSelectedItem().toString());
+				cargaTabla(arrProductos);
 			}
 		});
 		comboBoxProductos.setBounds(121, 24, 185, 22);
@@ -47,12 +47,14 @@ public class PanelConsultar extends JPanel {
 		
 		table = new JTable();
 		scrollPane.setColumnHeaderView(table);
+		
+		cargaCombo();
 
 	}
-	public void cargaTabla() {
+	public void cargaTabla(ArrayList<Producto> arrProductos) {
 		modeloTabla.setRowCount(0);
 
-		for (Producto p: misProductos) {
+		for (Producto p: arrProductos) {
 			modeloTabla.addRow(new Object[] { p.getNombre(), p.getCod(), p.getCantidad(), p.getPrecio(), });
 		}
 	}
