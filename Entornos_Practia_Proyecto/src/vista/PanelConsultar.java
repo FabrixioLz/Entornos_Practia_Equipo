@@ -48,14 +48,18 @@ public class PanelConsultar extends JPanel {
 		table = new JTable();
 		scrollPane.setColumnHeaderView(table);
 		
+		modeloTabla.setColumnIdentifiers(new Object[] { "Cod", "Nombre", "Cantidad", "Precio" });
+		table.setModel(modeloTabla);
+		
 		cargaCombo();
+		
 
 	}
 	public void cargaTabla(ArrayList<Producto> arrProductos) {
 		modeloTabla.setRowCount(0);
 
 		for (Producto p: arrProductos) {
-			modeloTabla.addRow(new Object[] { p.getNombre(), p.getCod(), p.getCantidad(), p.getPrecio(), });
+			modeloTabla.addRow(new Object[] { p.getCod(), p.getNombre(), p.getCantidad(), p.getPrecio(), });
 		}
 	}
 	

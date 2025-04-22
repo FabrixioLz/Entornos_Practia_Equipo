@@ -59,8 +59,8 @@ public class ConectandoBBDD {
 
 			while (registro.next()) {
 				p = new Producto(null, null, 0, 0);
-				p.setNombre(registro.getString("nombre"));
 				p.setCod(registro.getString("cod"));
+				p.setNombre(registro.getString("nombre"));
 				p.setCantidad(registro.getInt("cantidad"));
 				p.setPrecio(registro.getInt("precio"));
 				arrProductos.add(p);
