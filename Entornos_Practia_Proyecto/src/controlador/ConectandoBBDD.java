@@ -15,8 +15,8 @@ public class ConectandoBBDD {
 		try {
 			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/bdinventario", "root", "");
 			Statement consulta = conexion.createStatement();
-			consulta.executeUpdate("insert into producto (nombre, cod, cantidad, precio) " + "values ('"
-					+ p.getNombre() + "','" + p.getCod() + "','" + p.getCantidad() + "'," + p.getPrecio() + "); ");
+			consulta.executeUpdate("insert into producto (nombre, cantidad, precio) " + "values ('"
+					+ p.getNombre()  + "','" + p.getCantidad() + "'," + p.getPrecio() + "); ");
 
 			conexion.close();
 			return true;
@@ -58,11 +58,11 @@ public class ConectandoBBDD {
 			ResultSet registro = consulta.executeQuery("select * from producto " + "where nombre='" + nombre + "'");
 
 			while (registro.next()) {
-				p = new Producto(null, null, 0, 0);
-				p.setCod(registro.getString("cod"));
+				p = new Producto();
+				p.setIdProducto(Integer.parseInt(registro.getString("idProducto")));
 				p.setNombre(registro.getString("nombre"));
-				p.setCantidad(registro.getInt("cantidad"));
-				p.setPrecio(registro.getInt("precio"));
+				p.setCantidad(Integer.parseInt(registro.getString("cantidad")));
+				p.setPrecio(Float.parseFloat(registro.getString("precio")));
 				arrProductos.add(p);
 			}
 			conexion.close();

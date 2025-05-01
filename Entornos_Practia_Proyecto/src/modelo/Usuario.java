@@ -1,15 +1,25 @@
 package modelo;
 
 public class Usuario {
+	private int idUsuario;
 	private String user;
 	public enum Roll{TRABAJADOR, GERENTE}
 	private Roll roll;
 	private String pass;
 	
-	public Usuario(String user, Roll roll, String pass) {
+	public Usuario(int idUsuario, String user, Roll roll, String pass) {
+		this.idUsuario = idUsuario;
 		this.user = user;
 		this.roll = roll;
 		this.pass = pass;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public String getUser() {
@@ -35,4 +45,6 @@ public class Usuario {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+
+	
 }

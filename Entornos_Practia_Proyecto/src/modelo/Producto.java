@@ -1,16 +1,31 @@
 package modelo;
 
 public class Producto {
+	private int idProducto;
 	private String nombre;
-	private String cod;
 	private int cantidad;
 	private float precio;
 	
-	public Producto(String nombre, String cod, int cantidad, float precio) {
+	public Producto() {
+		this.idProducto = -1;
+		this.nombre = "ERROR";
+		this.cantidad = -1;
+		this.precio = -1.1f;
+	}
+	
+	public Producto(int idProducto, String nombre, int cantidad, float precio) {
+		this.idProducto = idProducto;
 		this.nombre = nombre;
-		this.cod = cod;
 		this.cantidad = cantidad;
 		this.precio = precio;
+	}
+
+	public int getIdProducto() {
+		return idProducto;
+	}
+
+	public void setIdProducto(int idProducto) {
+		this.idProducto = idProducto;
 	}
 
 	public String getNombre() {
@@ -19,14 +34,6 @@ public class Producto {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getCod() {
-		return cod;
-	}
-
-	public void setCod(String cod) {
-		this.cod = cod;
 	}
 
 	public int getCantidad() {
@@ -44,4 +51,7 @@ public class Producto {
 	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
+
+	
+	
 }

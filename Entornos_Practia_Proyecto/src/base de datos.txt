@@ -1,0 +1,22 @@
+create database bdinventario;
+use bdinventario;
+
+CREATE TABLE producto(
+	idProducto INT auto_increment PRIMARY KEY,
+	nombre VARCHAR(50),
+	cantidad INT, 
+	precio DECIMAL(6,2));
+
+CREATE TABLE Proveedor(
+	IdProveedor INT auto_increment PRIMARY KEY,
+	nombre VARCHAR(50),
+	direccion VARCHAR(50),
+	telefono INT);
+
+CREATE TABLE Usuario(
+	idUsuario INT auto_increment PRIMARY KEY,
+	user VARCHAR(50),
+	roll VARCHAR(50)
+	pass VARCHAR(50));
+	
+	
