@@ -5,18 +5,26 @@ CREATE TABLE producto(
 	idProducto INT auto_increment PRIMARY KEY,
 	nombre VARCHAR(50),
 	cantidad INT, 
-	precio DECIMAL(6,2));
+	precio DECIMAL(6,2),
+	idProveedor INT,
+	FOREIGN KEY (idProveedor) REFERENCES Proveedor(IdProveedor));
 
 CREATE TABLE Proveedor(
 	IdProveedor INT auto_increment PRIMARY KEY,
 	nombre VARCHAR(50),
+	tipo VARCHAR(50),
 	direccion VARCHAR(50),
-	telefono INT);
+	telefono INT,
+	dni VARCHAR(9));
 
 CREATE TABLE Usuario(
 	idUsuario INT auto_increment PRIMARY KEY,
 	user VARCHAR(50),
-	roll VARCHAR(50)
+	roll VARCHAR(50),
 	pass VARCHAR(50));
 	
-	
+// abastecedor, provisor, suministrador, distribuidor, administrador, agente (tipos de proveedores, para escribir al probar)
+
+/* cuando se pruebe el panel de borrar, no se puede borrar un proveedor si existe algun producto que es distribuido por ese proveedor,
+para borrarlo primero hay que borrar los productos que gestiona, si no estos productos se quedarían en el aire, lo mismo para insertar, 
+primero se insertan los proveedores y luego los productos que gestiona, si no da error por que es clave foranea*/

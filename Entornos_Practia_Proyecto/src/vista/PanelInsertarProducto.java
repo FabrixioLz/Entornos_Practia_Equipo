@@ -15,12 +15,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class PanelInsertar extends JPanel {
+public class PanelInsertarProducto extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField textFieldNombre;
 
-	public PanelInsertar() {
+	public PanelInsertarProducto() {
 		setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("Nombre: ");
@@ -34,6 +34,10 @@ public class PanelInsertar extends JPanel {
 		JLabel lblNewLabel_3 = new JLabel("Precio:");
 		lblNewLabel_3.setBounds(102, 146, 46, 14);
 		add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("Id del Proveedor: ");
+		lblNewLabel_3_1.setBounds(102, 193, 102, 14);
+		add(lblNewLabel_3_1);
 
 		textFieldNombre = new JTextField();
 		textFieldNombre.setBounds(220, 63, 124, 20);
@@ -47,6 +51,11 @@ public class PanelInsertar extends JPanel {
 		JSpinner spinnerPrecio = new JSpinner();
 		spinnerPrecio.setBounds(220, 143, 124, 20);
 		add(spinnerPrecio);
+		
+		JSpinner spinnerIdProveedor = new JSpinner();
+		spinnerIdProveedor.setBounds(220, 190, 124, 20);
+		add(spinnerIdProveedor);
+
 
 		JButton btnInsertar = new JButton("Insertar");
 	
@@ -56,6 +65,7 @@ public class PanelInsertar extends JPanel {
 				productos.setNombre(textFieldNombre.getText());
 				productos.setCantidad(Integer.parseInt(spinnerCantidad.getValue().toString()));
 				productos.setPrecio(Float.parseFloat(spinnerPrecio.getValue().toString()));
+				productos.setIdProveedor(Integer.parseInt(spinnerIdProveedor.getValue().toString()));
 				
 
 				boolean correcto = false;
@@ -73,11 +83,13 @@ public class PanelInsertar extends JPanel {
 					textFieldNombre.setText("");
 					spinnerCantidad.setValue(2);
 					spinnerPrecio.setValue(2);
+					spinnerIdProveedor.setValue(2);
 				}
 			}
 		});
-		btnInsertar.setBounds(161, 193, 89, 23);
+		btnInsertar.setBounds(159, 234, 96, 32);
 		add(btnInsertar);
-
+		
+		
 }
 }

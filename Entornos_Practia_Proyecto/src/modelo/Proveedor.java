@@ -1,21 +1,27 @@
 package modelo;
 
-public class Proovedor {
+public class Proveedor {
 	private int idProveedor;
+	private String dni;
 	private String nombre;
+	private String tipo;
 	private String direccion;
-	private int telefono;
+	private String telefono;
 	
-	public Proovedor() {
-		this.idProveedor = -1;
+	public Proveedor() {
+		this.idProveedor = 0;
+		this.dni = "ERROR";
 		this.nombre = "ERROR";
+		this.tipo = "ERROR";
 		this.direccion = "ERROR";
-		this.telefono = -1;
+		this.telefono = "ERROR";
 	}
 	
-	public Proovedor(int idProveedor, String nombre, String direccion, int telefono) {
+	public Proveedor(int idProveedor, String dni, String nombre, String tipo, String direccion, String telefono) {
 		this.idProveedor = idProveedor;
+		this.dni = dni;
 		this.nombre = nombre;
+		this.tipo = tipo;
 		this.direccion = direccion;
 		this.telefono = telefono;
 	}
@@ -28,12 +34,28 @@ public class Proovedor {
 		this.idProveedor = idProveedor;
 	}
 
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public String getDireccion() {
@@ -44,13 +66,16 @@ public class Proovedor {
 		this.direccion = direccion;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
+	
+	
 	
 	
 }

@@ -7,7 +7,6 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
 import javax.swing.JComboBox;
-import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 import controlador.ConectandoBBDD;
@@ -15,18 +14,19 @@ import modelo.Producto;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.Color;
 
-public class PanelConsultar extends JPanel {
+public class PanelConsultarProducto extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JTable table;
 	private JComboBox comboBoxProductos;
 	DefaultTableModel modeloTabla = new DefaultTableModel();
+	private JTable tableProductos;
 
 	/**
 	 * Create the panel.
 	 */
-	public PanelConsultar() {
+	public PanelConsultarProducto() {
 		setLayout(null);
 		
 		comboBoxProductos = new JComboBox();
@@ -38,19 +38,19 @@ public class PanelConsultar extends JPanel {
 				cargaTabla(arrProductos);
 			}
 		});
-		comboBoxProductos.setBounds(121, 24, 185, 22);
+		comboBoxProductos.setBounds(173, 44, 208, 22);
 		add(comboBoxProductos);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(31, 57, 388, 147);
+		scrollPane.setBounds(53, 93, 447, 196);
 		add(scrollPane);
 		
-		table = new JTable();
-		scrollPane.setColumnHeaderView(table);
+		tableProductos = new JTable();
+		tableProductos.setForeground(new Color(0, 0, 255));
+		scrollPane.setViewportView(tableProductos);
 		
-		modeloTabla.setColumnIdentifiers(new Object[] { "idProducto", "Nombre", "Cantidad", "Precio" });
-		table.setModel(modeloTabla);
-		
+		modeloTabla.setColumnIdentifiers(new Object[] { "idProducto", "Nombre", "Cantidad", "Precio", "idProveedor" });
+		tableProductos.setModel(modeloTabla);
 		cargaCombo();
 		
 
@@ -59,7 +59,7 @@ public class PanelConsultar extends JPanel {
 		modeloTabla.setRowCount(0);
 
 		for (Producto p: arrProductos) {
-			modeloTabla.addRow(new Object[] { p.getIdProducto(), p.getNombre(), p.getCantidad(), p.getPrecio(), });
+			modeloTabla.addRow(new Object[] { p.getIdProducto(), p.getNombre(), p.getCantidad(), p.getPrecio(), p.getIdProveedor() });
 		}
 	}
 	
