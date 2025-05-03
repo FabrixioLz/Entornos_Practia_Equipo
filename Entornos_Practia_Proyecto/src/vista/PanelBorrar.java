@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class PanelBorrar extends JPanel {
 
@@ -25,14 +26,17 @@ public class PanelBorrar extends JPanel {
 		setLayout(null);
 		
 		JLabel lblIdProductoParaBorrar = new JLabel("Id del producto:");
-		lblIdProductoParaBorrar.setBounds(21, 89, 88, 14);
+		lblIdProductoParaBorrar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIdProductoParaBorrar.setBounds(42, 107, 109, 14);
 		add(lblIdProductoParaBorrar);
 		
 		JSpinner spinnerIdProductoABorrar = new JSpinner();
-		spinnerIdProductoABorrar.setBounds(124, 86, 93, 20);
+		spinnerIdProductoABorrar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		spinnerIdProductoABorrar.setBounds(187, 104, 114, 20);
 		add(spinnerIdProductoABorrar);
 		
 		JButton btnBorrarProducto = new JButton("Borrar Producto");
+		btnBorrarProducto.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnBorrarProducto.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			Producto productos = new Producto();
@@ -45,9 +49,9 @@ public class PanelBorrar extends JPanel {
 				ConectandoBBDD bd = new ConectandoBBDD();
 				correcto = bd.borrarProducto(productos);
 				if (correcto) {
-					JOptionPane.showMessageDialog(null, "Producto borrado correctamente");
-				} else {
 					JOptionPane.showMessageDialog(null, "El producto no se pudo borrar correctamente");
+				} else {
+					JOptionPane.showMessageDialog(null, "Producto borrado correctamente");
 				}
 				
 				spinnerIdProductoABorrar.setValue(2);
@@ -55,18 +59,21 @@ public class PanelBorrar extends JPanel {
 			}
 		}
 	});
-		btnBorrarProducto.setBounds(267, 80, 133, 32);
+		btnBorrarProducto.setBounds(353, 98, 133, 32);
 		add(btnBorrarProducto);
 		
 		JLabel lblProveedorParaBorrar = new JLabel("Id del Proveedor:");
-		lblProveedorParaBorrar.setBounds(21, 183, 88, 14);
+		lblProveedorParaBorrar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblProveedorParaBorrar.setBounds(42, 235, 109, 14);
 		add(lblProveedorParaBorrar);
 		
 		JSpinner spinnerProveedorAVBorrar = new JSpinner();
-		spinnerProveedorAVBorrar.setBounds(124, 180, 93, 20);
+		spinnerProveedorAVBorrar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		spinnerProveedorAVBorrar.setBounds(187, 232, 114, 20);
 		add(spinnerProveedorAVBorrar);
 		
 		JButton btnBorrarProveedor = new JButton("Borrar Proveedor");
+		btnBorrarProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnBorrarProveedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Proveedor proveedor = new Proveedor();
@@ -79,9 +86,9 @@ public class PanelBorrar extends JPanel {
 					ConectandoBBDD bd = new ConectandoBBDD();
 					correcto = bd.borrarProveedor(proveedor);
 					if (correcto) {
-						JOptionPane.showMessageDialog(null, "Proveedor borrado correctamente");
-					} else {
 						JOptionPane.showMessageDialog(null, "El proveedor no se pudo borrar correctamente");
+					} else {
+						JOptionPane.showMessageDialog(null, "Proveedor borrado correctamente");
 					}
 					
 					spinnerProveedorAVBorrar.setValue(0);
@@ -90,8 +97,18 @@ public class PanelBorrar extends JPanel {
 			}
 		});
 		
-		btnBorrarProveedor.setBounds(267, 170, 133, 32);
+		btnBorrarProveedor.setBounds(353, 226, 133, 32);
 		add(btnBorrarProveedor);
+		
+		JLabel lblNewLabel = new JLabel("ELIMINAR  PRODUCTO");
+		lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 15));
+		lblNewLabel.setBounds(157, 53, 219, 14);
+		add(lblNewLabel);
+		
+		JLabel lblBorrarProveedor = new JLabel("ELIMINAR PROVEEDOR");
+		lblBorrarProveedor.setFont(new Font("Arial Black", Font.BOLD, 15));
+		lblBorrarProveedor.setBounds(157, 174, 219, 14);
+		add(lblBorrarProveedor);
 
 	}
 }

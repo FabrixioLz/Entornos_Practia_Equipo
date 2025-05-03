@@ -15,6 +15,8 @@ import modelo.Producto;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class PanelConsultarProducto extends JPanel {
 
@@ -22,6 +24,7 @@ public class PanelConsultarProducto extends JPanel {
 	private JComboBox comboBoxProductos;
 	DefaultTableModel modeloTabla = new DefaultTableModel();
 	private JTable tableProductos;
+	private JLabel lblNewLabel;
 
 	/**
 	 * Create the panel.
@@ -30,6 +33,7 @@ public class PanelConsultarProducto extends JPanel {
 		setLayout(null);
 		
 		comboBoxProductos = new JComboBox();
+		comboBoxProductos.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		comboBoxProductos.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				ArrayList<Producto> arrProductos = new ArrayList<>();
@@ -38,11 +42,11 @@ public class PanelConsultarProducto extends JPanel {
 				cargaTabla(arrProductos);
 			}
 		});
-		comboBoxProductos.setBounds(173, 44, 208, 22);
+		comboBoxProductos.setBounds(177, 81, 208, 22);
 		add(comboBoxProductos);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(53, 93, 447, 196);
+		scrollPane.setBounds(44, 129, 485, 167);
 		add(scrollPane);
 		
 		tableProductos = new JTable();
@@ -51,6 +55,11 @@ public class PanelConsultarProducto extends JPanel {
 		
 		modeloTabla.setColumnIdentifiers(new Object[] { "idProducto", "Nombre", "Cantidad", "Precio", "idProveedor" });
 		tableProductos.setModel(modeloTabla);
+		
+		lblNewLabel = new JLabel("CONSULTA DE PRODUCTOS");
+		lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 15));
+		lblNewLabel.setBounds(163, 31, 288, 14);
+		add(lblNewLabel);
 		cargaCombo();
 		
 

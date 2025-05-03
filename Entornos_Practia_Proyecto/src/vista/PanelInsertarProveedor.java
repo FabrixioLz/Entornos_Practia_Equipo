@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JSpinner;
+import java.awt.Font;
 
 public class PanelInsertarProveedor extends JPanel {
 
@@ -30,47 +31,57 @@ public class PanelInsertarProveedor extends JPanel {
 		setLayout(null);
 
 		JLabel lblNombreProveedor = new JLabel("Nombre:");
-		lblNombreProveedor.setBounds(87, 42, 69, 14);
+		lblNombreProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNombreProveedor.setBounds(108, 78, 69, 14);
 		add(lblNombreProveedor);
 		
 		JLabel lblDNI = new JLabel("DNI:");
-		lblDNI.setBounds(87, 80, 46, 14);
+		lblDNI.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblDNI.setBounds(110, 124, 46, 14);
 		add(lblDNI);
 
 		JLabel lblDirección = new JLabel("Dirección:");
-		lblDirección.setBounds(87, 114, 69, 14);
+		lblDirección.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblDirección.setBounds(108, 167, 69, 14);
 		add(lblDirección);
 
 		JLabel lblTelfono = new JLabel("Teléfono:");
-		lblTelfono.setBounds(87, 183, 69, 14);
+		lblTelfono.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblTelfono.setBounds(108, 251, 69, 14);
 		add(lblTelfono);
 
 		textNombreProveedor = new JTextField();
+		textNombreProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textNombreProveedor.setColumns(10);
-		textNombreProveedor.setBounds(189, 39, 202, 20);
+		textNombreProveedor.setBounds(229, 76, 202, 20);
 		add(textNombreProveedor);
 		
 		textDNI = new JTextField();
-		textDNI.setBounds(189, 77, 202, 20);
+		textDNI.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		textDNI.setBounds(229, 121, 202, 20);
 		add(textDNI);
 		textDNI.setColumns(10);
 
 		textDireccionProveedor = new JTextField();
+		textDireccionProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textDireccionProveedor.setColumns(10);
-		textDireccionProveedor.setBounds(189, 111, 202, 20);
+		textDireccionProveedor.setBounds(229, 164, 202, 20);
 		add(textDireccionProveedor);
 
 		textTelProveedor = new JTextField();
+		textTelProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textTelProveedor.setColumns(10);
-		textTelProveedor.setBounds(189, 180, 127, 20);
+		textTelProveedor.setBounds(229, 248, 127, 20);
 		add(textTelProveedor);
 
 		textTipoProveedor = new JTextField();
+		textTipoProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textTipoProveedor.setColumns(10);
-		textTipoProveedor.setBounds(189, 142, 202, 20);
+		textTipoProveedor.setBounds(229, 205, 202, 20);
 		add(textTipoProveedor);
 
 		JButton btnInsertar = new JButton("Insertar");
+		btnInsertar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		btnInsertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -102,12 +113,18 @@ public class PanelInsertarProveedor extends JPanel {
 			}
 		});
 
-		btnInsertar.setBounds(189, 243, 101, 34);
+		btnInsertar.setBounds(184, 301, 101, 34);
 		add(btnInsertar);
 
 		JLabel lblTipoProveedor = new JLabel("Tipo:");
-		lblTipoProveedor.setBounds(87, 147, 46, 14);
+		lblTipoProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblTipoProveedor.setBounds(110, 208, 46, 14);
 		add(lblTipoProveedor);
+		
+		JLabel lblNewLabel = new JLabel("INSERTAR NUEVO PROVEEDOR");
+		lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 15));
+		lblNewLabel.setBounds(120, 37, 303, 14);
+		add(lblNewLabel);
 		
 		
 		

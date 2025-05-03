@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class PanelInsertarProducto extends JPanel {
 
@@ -24,40 +25,49 @@ public class PanelInsertarProducto extends JPanel {
 		setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("Nombre: ");
-		lblNewLabel_1.setBounds(102, 66, 60, 14);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(102, 113, 60, 14);
 		add(lblNewLabel_1);
 
 		JLabel lblNewLabel_2 = new JLabel("Cantidad:");
-		lblNewLabel_2.setBounds(102, 104, 75, 14);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_2.setBounds(102, 152, 75, 14);
 		add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("Precio:");
-		lblNewLabel_3.setBounds(102, 146, 46, 14);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_3.setBounds(103, 190, 46, 14);
 		add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Id del Proveedor: ");
-		lblNewLabel_3_1.setBounds(102, 193, 102, 14);
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_3_1.setBounds(102, 225, 102, 14);
 		add(lblNewLabel_3_1);
 
 		textFieldNombre = new JTextField();
-		textFieldNombre.setBounds(220, 63, 124, 20);
+		textFieldNombre.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		textFieldNombre.setBounds(258, 110, 146, 20);
 		add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 
 		JSpinner spinnerCantidad = new JSpinner();
-		spinnerCantidad.setBounds(220, 101, 124, 20);
+		spinnerCantidad.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		spinnerCantidad.setBounds(258, 149, 146, 20);
 		add(spinnerCantidad);
 
 		JSpinner spinnerPrecio = new JSpinner();
-		spinnerPrecio.setBounds(220, 143, 124, 20);
+		spinnerPrecio.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		spinnerPrecio.setBounds(258, 187, 146, 20);
 		add(spinnerPrecio);
 		
 		JSpinner spinnerIdProveedor = new JSpinner();
-		spinnerIdProveedor.setBounds(220, 190, 124, 20);
+		spinnerIdProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		spinnerIdProveedor.setBounds(258, 223, 146, 20);
 		add(spinnerIdProveedor);
 
 
 		JButton btnInsertar = new JButton("Insertar");
+		btnInsertar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 	
 		btnInsertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -87,8 +97,13 @@ public class PanelInsertarProducto extends JPanel {
 				}
 			}
 		});
-		btnInsertar.setBounds(159, 234, 96, 32);
+		btnInsertar.setBounds(160, 269, 96, 32);
 		add(btnInsertar);
+		
+		JLabel lblNewLabel = new JLabel("INSERTAR NUEVO PRODUCTO");
+		lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 15));
+		lblNewLabel.setBounds(102, 58, 279, 14);
+		add(lblNewLabel);
 		
 		
 }

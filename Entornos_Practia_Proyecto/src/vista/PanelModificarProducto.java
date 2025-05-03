@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
+import java.awt.Font;
 
 public class PanelModificarProducto extends JPanel {
 
@@ -30,27 +31,33 @@ public class PanelModificarProducto extends JPanel {
 		setLayout(null);
 		
 		JSpinner spinnerIdProductoAModificar = new JSpinner();
-		spinnerIdProductoAModificar.setBounds(284, 98, 85, 20);
+		spinnerIdProductoAModificar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		spinnerIdProductoAModificar.setBounds(256, 98, 150, 20);
 		add(spinnerIdProductoAModificar);
 		
 		JLabel lblNombreModificado = new JLabel("Nombre: ");
+		lblNombreModificado.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNombreModificado.setBounds(112, 138, 65, 14);
 		add(lblNombreModificado);
 		
 		textFieldNombreModificado = new JTextField();
-		textFieldNombreModificado.setBounds(284, 135, 150, 20);
+		textFieldNombreModificado.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		textFieldNombreModificado.setBounds(256, 135, 150, 20);
 		add(textFieldNombreModificado);
 		textFieldNombreModificado.setColumns(10);
 		
 		JLabel lblCantidadModificada = new JLabel("Cantidad:");
+		lblCantidadModificada.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCantidadModificada.setBounds(112, 175, 65, 14);
 		add(lblCantidadModificada);
 		
 		JLabel lblPrecioModificado = new JLabel("Precio: ");
-		lblPrecioModificado.setBounds(112, 213, 46, 14);
+		lblPrecioModificado.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblPrecioModificado.setBounds(112, 213, 65, 14);
 		add(lblPrecioModificado);
 		
 		JSpinner spinnerPrecioModificado = new JSpinner();
+		spinnerPrecioModificado.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		spinnerPrecioModificado.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent event) {
 			}
@@ -59,18 +66,21 @@ public class PanelModificarProducto extends JPanel {
 			public void ancestorRemoved(AncestorEvent event) {
 			}
 		});
-		spinnerPrecioModificado.setBounds(284, 210, 85, 20);
+		spinnerPrecioModificado.setBounds(256, 210, 150, 20);
 		add(spinnerPrecioModificado);
 		
 		JLabel lblIdProveedorModificado = new JLabel("Id del proveedor:");
-		lblIdProveedorModificado.setBounds(112, 249, 95, 14);
+		lblIdProveedorModificado.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIdProveedorModificado.setBounds(112, 249, 104, 14);
 		add(lblIdProveedorModificado);
 		
 		JLabel lblIdProductoAModificar = new JLabel("Id a modificar: ");
-		lblIdProductoAModificar.setBounds(112, 101, 85, 14);
+		lblIdProductoAModificar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblIdProductoAModificar.setBounds(112, 101, 104, 14);
 		add(lblIdProductoAModificar);
 		
 		JSpinner spinnerIdProveedorModificado = new JSpinner();
+		spinnerIdProveedorModificado.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		spinnerIdProveedorModificado.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent event) {
 			}
@@ -79,14 +89,16 @@ public class PanelModificarProducto extends JPanel {
 			public void ancestorRemoved(AncestorEvent event) {
 			}
 		});
-		spinnerIdProveedorModificado.setBounds(284, 241, 85, 20);
+		spinnerIdProveedorModificado.setBounds(256, 246, 150, 20);
 		add(spinnerIdProveedorModificado);
 		
 		JSpinner spinnerCantidadModificada = new JSpinner();
-		spinnerCantidadModificada.setBounds(284, 172, 85, 20);
+		spinnerCantidadModificada.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		spinnerCantidadModificada.setBounds(256, 172, 150, 20);
 		add(spinnerCantidadModificada);
 		
 		JButton btnModificar = new JButton("Modificar");
+		btnModificar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		btnModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -117,8 +129,14 @@ public class PanelModificarProducto extends JPanel {
 				}
 			}
 		});
-		btnModificar.setBounds(190, 289, 104, 32);
+		btnModificar.setBounds(176, 306, 104, 32);
 		add(btnModificar);
+		
+		JLabel lblNewLabel = new JLabel("MODIFICACIÓN DE PRODUCTOS");
+		lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 15));
+		lblNewLabel.setForeground(new Color(0, 0, 0));
+		lblNewLabel.setBounds(112, 49, 322, 14);
+		add(lblNewLabel);
 		
 		
 

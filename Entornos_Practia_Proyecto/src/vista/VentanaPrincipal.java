@@ -11,6 +11,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.Font;
+import java.awt.Color;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -38,18 +40,21 @@ public class VentanaPrincipal extends JFrame {
 	 */
 	public VentanaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 614, 413);
+		setBounds(100, 100, 596, 470);
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
-		JMenu mnMenu = new JMenu("Menú");
+		JMenu mnMenu = new JMenu("      GESTIÓN DE PRODUCTOS Y SUS PROVEEDORES      ");
+		mnMenu.setBackground(new Color(240, 240, 240));
+		mnMenu.setFont(new Font("Arial Black", Font.BOLD, 18));
 		menuBar.add(mnMenu);
 
 		PanelInsertarProducto PanelInsertar = new PanelInsertarProducto();
 		PanelConsultarProducto PanelConsultar = new PanelConsultarProducto();
 
-		JMenuItem mntmInsertarProducto = new JMenuItem("Insertar producto");
+		JMenuItem mntmInsertarProducto = new JMenuItem("1. Insertar producto");
+		mntmInsertarProducto.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmInsertarProducto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -59,7 +64,8 @@ public class VentanaPrincipal extends JFrame {
 		});
 		mnMenu.add(mntmInsertarProducto);
 
-		JMenuItem mntmConsultarInventario = new JMenuItem("Consultar Inventario");
+		JMenuItem mntmConsultarInventario = new JMenuItem("2. Consultar Inventario");
+		mntmConsultarInventario.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmConsultarInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -69,7 +75,8 @@ public class VentanaPrincipal extends JFrame {
 		});
 		mnMenu.add(mntmConsultarInventario);
 
-		JMenuItem mntmInsertarProveedor = new JMenuItem("Insertar Proveedor");
+		JMenuItem mntmInsertarProveedor = new JMenuItem("3. Insertar Proveedor");
+		mntmInsertarProveedor.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmInsertarProveedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -79,7 +86,8 @@ public class VentanaPrincipal extends JFrame {
 		});
 		mnMenu.add(mntmInsertarProveedor);
 
-		JMenuItem mntmConsultarProveedor = new JMenuItem("Consultar Proveedor");
+		JMenuItem mntmConsultarProveedor = new JMenuItem("4. Consultar Proveedor");
+		mntmConsultarProveedor.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmConsultarProveedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -89,7 +97,8 @@ public class VentanaPrincipal extends JFrame {
 		});
 		mnMenu.add(mntmConsultarProveedor);
 
-		JMenuItem mntmModificarProducto = new JMenuItem("Modificar Producto");
+		JMenuItem mntmModificarProducto = new JMenuItem("5. Modificar Producto");
+		mntmModificarProducto.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmModificarProducto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -99,11 +108,19 @@ public class VentanaPrincipal extends JFrame {
 		});
 		mnMenu.add(mntmModificarProducto);
 		
-		JMenuItem mntmModificarProveedor = new JMenuItem("Modificar Proveedor");
-		
+		JMenuItem mntmModificarProveedor = new JMenuItem("6. Modificar Proveedor");
+		mntmModificarProveedor.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+		mntmModificarProveedor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				PanelModificarProveedor mprov = new PanelModificarProveedor();
+				nuevoPanel(mprov);
+			}
+		});
 		mnMenu.add(mntmModificarProveedor);
 		
-		JMenuItem mntmBorrar = new JMenuItem("Borrar ");
+		JMenuItem mntmBorrar = new JMenuItem("7. Borrar ");
+		mntmBorrar.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		mntmBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 

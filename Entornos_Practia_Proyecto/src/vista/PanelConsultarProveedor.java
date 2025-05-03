@@ -14,6 +14,8 @@ import javax.swing.table.DefaultTableModel;
 import controlador.ConectandoBBDD;
 import modelo.Proveedor;
 import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class PanelConsultarProveedor extends JPanel {
 
@@ -22,6 +24,7 @@ public class PanelConsultarProveedor extends JPanel {
 	private JComboBox comboBoxTipoProveedores;
 	DefaultTableModel modeloTabla = new DefaultTableModel();
 	private JTable table;
+	private JLabel lblNewLabel;
 
 	/**
 	 * Create the panel.
@@ -30,6 +33,7 @@ public class PanelConsultarProveedor extends JPanel {
 		setLayout(null);
 
 		comboBoxTipoProveedores = new JComboBox();
+		comboBoxTipoProveedores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		comboBoxTipoProveedores.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				ArrayList<Proveedor> arrProveedor = new ArrayList<>();
@@ -39,11 +43,11 @@ public class PanelConsultarProveedor extends JPanel {
 			}
 		});
 
-		comboBoxTipoProveedores.setBounds(176, 52, 201, 22);
+		comboBoxTipoProveedores.setBounds(187, 96, 201, 22);
 		add(comboBoxTipoProveedores);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(35, 100, 483, 168);
+		scrollPane.setBounds(49, 153, 483, 168);
 		add(scrollPane);
 
 		tableProveedores = new JTable();
@@ -52,6 +56,11 @@ public class PanelConsultarProveedor extends JPanel {
 
 		modeloTabla.setColumnIdentifiers(new Object[] { "Nombre", "dni", "Direccion", "Tipo", "Telefono", "IdProveedor" });
 		tableProveedores.setModel(modeloTabla);
+		
+		lblNewLabel = new JLabel("CONSULTA DE PROVEEDORES");
+		lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 15));
+		lblNewLabel.setBounds(152, 45, 289, 14);
+		add(lblNewLabel);
 
 		cargaCombo();
 	}
