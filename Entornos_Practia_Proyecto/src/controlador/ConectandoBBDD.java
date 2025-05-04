@@ -10,13 +10,18 @@ import java.util.ArrayList;
 import modelo.Producto;
 import modelo.Proveedor;
 
-
+/**
+ * Clase que contiene la conexión a la base de datos, con las secuencias y consultas necesarias para ejecutar los paneles de:
+ * insertar, consultar, modificar y borrar.
+ * 
+  @author Ruben Castañares
+ */
 public class ConectandoBBDD {
 	/**
 	 * Método que establece una conexión a la base de datos.
-	 * Se utiliza una sentencia para añadir nuevos datos a la tabla producto
-	 * @param p (objeto que contiene los datos que se van a insertar en la base de datos)
-	 * @return si se añaden devuelve un mensaje de éxito, sino devuelve un mensaje de error
+	 * Se utiliza una sentencia para añadir nuevos datos a la tabla producto.
+	 * @param p (objeto que contiene los datos que se van a insertar en la base de datos).
+	 * @return si se añaden devuelve un mensaje de éxito, sino devuelve un mensaje de error.
 	 * 
 	 * @author Ruben Castañares
 	 */
@@ -40,8 +45,8 @@ public class ConectandoBBDD {
 	/**
 	 *  Método que establece una conexión a la base de datos.
 	 *  Se utiliza una sentencia para añadir nuevos datos a la tabla proveedor.
-	 * @param prov (objeto que contiene los datos que se van a insertar en la base de datos)
-	 * @return si se añaden devuelve un mensaje de éxito, sino devuelve un mensaje de error
+	 * @param prov (objeto que contiene los datos que se van a insertar en la base de datos).
+	 * @return si se añaden devuelve un mensaje de éxito, sino devuelve un mensaje de error.
 	 * 
 	 * @author Rubén Castañares
 	 */
@@ -189,7 +194,7 @@ public class ConectandoBBDD {
 	/**
 	 * Método que modifica los datos de un producto ya existente en la base de datos.
 	 * Se modifican los datos del producto con el id que introduzca el ususario.
-	 * @param miProducto (objeto que contiene los nuevos datos del producto que se va a modificar)
+	 * @param miProducto (objeto que contiene los nuevos datos del producto que se va a modificar).
 	 * @return un mensaje de exito si se han modificado correctamente, si no, un mensaje de error.
 	 * 
 	 * @author Rubén Castañares
@@ -228,7 +233,7 @@ public class ConectandoBBDD {
 	 /**
 	  * Método que modifica los datos de un proveedor ya existente en la base de datos.
 	  * Se modifican los datos del proveedor con el id que introduzca el ususario.
-	  * @param miProveedor (objeto que contiene los nuevos datos del proveedor que se va a modificar)
+	  * @param miProveedor (objeto que contiene los nuevos datos del proveedor que se va a modificar).
 	  * @return un mensaje de exito si se han modificado correctamente, si no, un mensaje de error.
 	  * 
 	  * @author Rubén Castañares
@@ -268,7 +273,7 @@ public class ConectandoBBDD {
 	 /**
 	  * Método que borra los datos del producto que cuente con el mismo id que el que 
 	  * ha introducido el ususario.
-	  * @param miProducto (objeto que contiene los datos del producto que se va a eliminar)
+	  * @param miProducto (objeto que contiene los datos del producto que se va a eliminar).
 	  * @return un mensaje de exito si se ha borrado correctamente, si no, un mensaje de error.
 	  * 
 	  * @author Rubén Castañares
@@ -299,7 +304,7 @@ public class ConectandoBBDD {
 	 /**
 	  * Método que borra los datos del proveedor que cuente con el mismo id que el que 
 	  * ha introducido el ususario.
-	  * @param miProveedor (objeto que contiene los datos del proveedor que se va a eliminar)
+	  * @param miProveedor (objeto que contiene los datos del proveedor que se va a eliminar).
 	  * @return un mensaje de exito si se ha borrado correctamente, si no, un mensaje de error.
 	  * 
 	  * @author Rubén Castañares

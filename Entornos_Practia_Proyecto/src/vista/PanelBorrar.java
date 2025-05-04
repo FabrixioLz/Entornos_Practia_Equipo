@@ -14,13 +14,22 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import java.awt.Font;
-
+/**
+ * Panel que permite al usuario poder borrar, tanto un producto como un proveedor de la base de datos,
+ * introduciendo el identidicador correspondiente de cada uno de ellos.
+ * 
+ * @author Rubén Castañares
+ */
 public class PanelBorrar extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Create the panel.
+	 * Diseño del panel, en él aparecen JLabels, JButtons y Jspinners, necesarios para poder borrar
+	 * los proveedores y productos.
+	 * 
+	 * @author Rubén Castañares
 	 */
 	public PanelBorrar() {
 		setLayout(null);
@@ -37,6 +46,12 @@ public class PanelBorrar extends JPanel {
 		
 		JButton btnBorrarProducto = new JButton("Borrar Producto");
 		btnBorrarProducto.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		/**
+		 * Mediante el spinner se obtiene el id del producto, al pulsar borrar aparece un cuadro al usuario para que 
+		 * confirme nuevamente si quiere borrar o no.
+		 * 
+		 * @author Rubén Castañares
+		 */
 		btnBorrarProducto.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			Producto productos = new Producto();
@@ -74,6 +89,12 @@ public class PanelBorrar extends JPanel {
 		
 		JButton btnBorrarProveedor = new JButton("Borrar Proveedor");
 		btnBorrarProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		/**
+		 * Mediante el spinner se obtiene el id del proveedor, al pulsar borrar aparece un cuadro al usuario para que 
+		 * confirme nuevamente si quiere borrar o no.
+		 * 
+		 * @author Rubén Castañares
+		 */
 		btnBorrarProveedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Proveedor proveedor = new Proveedor();

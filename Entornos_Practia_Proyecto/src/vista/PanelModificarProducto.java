@@ -18,14 +18,21 @@ import java.awt.Color;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
 import java.awt.Font;
-
+/**
+ * Panel que permite al ususario modificar datos de los productos.
+ * 
+ * @author Rubén Castañares
+ */
 public class PanelModificarProducto extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField textFieldNombreModificado;
 
 	/**
-	 * Create the panel.
+	 * Diseño del panel, en él hay JLabels, textFields, JSpinners y un JButon,
+	 * necesarios para poder modificar los datos.
+	 * 
+	 * @author Rubén Castañares
 	 */
 	public PanelModificarProducto() {
 		setLayout(null);
@@ -99,7 +106,13 @@ public class PanelModificarProducto extends JPanel {
 		
 		JButton btnModificar = new JButton("Modificar");
 		btnModificar.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		
+		/**
+		 * Cuando el usuario pulsa el boton de modificar, aparece un cuadro de confirmación,
+		 * si pulsa si los datos se modifican, si no no ocurre nada.
+		 * Primero pide el id del producto que se quiere modificar.
+		 * 
+		 * @author Rubén Castañares
+		 */
 		btnModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Producto productos = new Producto();

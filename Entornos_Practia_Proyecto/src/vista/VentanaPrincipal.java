@@ -13,7 +13,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.Font;
 import java.awt.Color;
-
+/**
+ * Ventana principal de la aplicación, cuenta con un menú desde el que puedes acceder a los distintos paneles
+ * de insertar, consultar, modificar y borrar.
+ * 
+ * @author Rubén Castañares
+ */
 public class VentanaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -21,6 +26,9 @@ public class VentanaPrincipal extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * Inicia la aplicación.
+	 * 
+	 * @author Rubén Castañares
 	 */
 	public void ejecutador() {
 		EventQueue.invokeLater(new Runnable() {
@@ -37,6 +45,9 @@ public class VentanaPrincipal extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * Configuración de la ventana principal, un menú para moverse de un panel a otro.
+	 * 
+	 * @author Rubén Castañares
 	 */
 	public VentanaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -136,7 +147,13 @@ public class VentanaPrincipal extends JFrame {
 		setContentPane(contentPane);
 
 	}
-
+	/**
+	 * Método utilizado para cambiar el contenido del panel.
+	 * Elimina, agrega, reemplaza y actualiza.
+	 * @param panel (el panel que se va a mostrar en la ventana).
+	 * 
+	 * @author Rubén Castañares
+	 */
 	public void nuevoPanel(JPanel panel) {
 		contentPane.removeAll();
 		contentPane.add(panel);

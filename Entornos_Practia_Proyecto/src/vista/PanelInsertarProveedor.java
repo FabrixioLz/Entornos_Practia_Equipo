@@ -14,7 +14,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
 import java.awt.Font;
-
+/**
+ * Panel que permite al usuario introducir nuevos proveedores en la base de datos.
+ * 
+ * @author Rubén Castañares
+ */
 public class PanelInsertarProveedor extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -25,7 +29,10 @@ public class PanelInsertarProveedor extends JPanel {
 	private JTextField textDNI;
 
 	/**
-	 * Create the panel.
+	 * Diseño del panel, en el hay JLabels, textFields y un JButton,
+	 * necesarios para poder introducir los datos del proveedor.
+	 * 
+	 * @author Rubén Castañares
 	 */
 	public PanelInsertarProveedor() {
 		setLayout(null);
@@ -82,7 +89,13 @@ public class PanelInsertarProveedor extends JPanel {
 
 		JButton btnInsertar = new JButton("Insertar");
 		btnInsertar.setFont(new Font("Tahoma", Font.PLAIN, 12));
-
+		/**
+		 * Cuando el usuario pulsa el boton de insertar, se recogen todos los datos ingresados 
+		 * y se introducen en la base de datos.
+		 * Cuando se pulsa el boton insertar aparece un cuadro de confirmación.
+		 * 
+		 * @author Rubén Castañares
+		 */
 		btnInsertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Proveedor proveedor = new Proveedor();

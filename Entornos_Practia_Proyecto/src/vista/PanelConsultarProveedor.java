@@ -16,7 +16,12 @@ import modelo.Proveedor;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-
+/**
+ * Panel que permite al ususario poder consultar los proveedores que hay dentro de la base de datos,
+ * según su tipo.
+ * 
+ * @author Rubén Castañares
+ */
 public class PanelConsultarProveedor extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -28,6 +33,10 @@ public class PanelConsultarProveedor extends JPanel {
 
 	/**
 	 * Create the panel.
+	 * Diseño del panel, en el hay un combobox para seleccionar el proveedor y una tabla que muestra sus datos.
+	 * Cuando se cambia de un proveedor a otro, la tabla se actualiza automáticamente. 
+	 * 
+	 * @author Rubén Castañares
 	 */
 	public PanelConsultarProveedor() {
 		setLayout(null);
@@ -64,7 +73,12 @@ public class PanelConsultarProveedor extends JPanel {
 
 		cargaCombo();
 	}
-
+	/**
+	 * Se cargan los datos del proveedor en la tabla.
+	 * @param arrProveedor (lista de los proveedores).
+	 * 
+	 * @author Rubén Castañares
+	 */
 	public void cargaTabla(ArrayList<Proveedor> arrProveedor) {
 		modeloTabla.setRowCount(0);
 
@@ -73,7 +87,11 @@ public class PanelConsultarProveedor extends JPanel {
 					pdor.getTelefono(), pdor.getIdProveedor() });
 		}
 	}
-
+	/**
+	 * El JComboBox se carga con los tipos de los proveedores de la base de datos.
+	 * 
+	 * @author Rubén Castañares
+	 */
 	public void cargaCombo() {
 		ArrayList<String> misProveedores = new ArrayList<>();
 		ConectandoBBDD bd = new ConectandoBBDD();

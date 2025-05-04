@@ -16,7 +16,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JSpinner;
 import javax.swing.JButton;
 import java.awt.Color;
-
+/**
+ * Panel que permite al ususario modificar datos de los proveedores.
+ * 
+ * @author Rubén Castañares
+ */
 public class PanelModificarProveedor extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -27,7 +31,10 @@ public class PanelModificarProveedor extends JPanel {
 	private JTextField textTelefonoModificado;
 
 	/**
-	 * Create the panel.
+	 * Diseño del panel, en él hay JLabels, textFields, JSpinners y un JButon,
+	 * necesarios para poder modificar los datos.
+	 * 
+	 * @author Rubén Castañares
 	 */
 	public PanelModificarProveedor() {
 		setLayout(null);
@@ -104,6 +111,13 @@ public class PanelModificarProveedor extends JPanel {
 		
 		JButton btnModificarProveedor = new JButton("Modificar:");
 		btnModificarProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		/**
+		 * Cuando el usuario pulsa el boton de modificar, aparece un cuadro de confirmación,
+		 * si pulsa si los datos se modifican, si no no ocurre nada.
+		 * Primero pide el id del proveedor que se quiere modificar.
+		 * 
+		 * @author Rubén Castañares
+		 */
 		btnModificarProveedor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Proveedor proveedor = new Proveedor();

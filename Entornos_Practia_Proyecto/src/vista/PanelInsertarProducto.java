@@ -15,12 +15,21 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import java.awt.Font;
-
+/**
+ * Panel que permite al usuario introducir nuevos productos en la base de datos.
+ * 
+ * @author Rubén Castañares
+ */
 public class PanelInsertarProducto extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField textFieldNombre;
-
+	/**
+	 * Diseño del panel, e él hay JLabels, textFields, JSpinners y un JButton,
+	 * necesarios para poder introducir los datos.
+	 * 
+	 * @author Rubén Castañares
+	 */
 	public PanelInsertarProducto() {
 		setLayout(null);
 
@@ -68,7 +77,13 @@ public class PanelInsertarProducto extends JPanel {
 
 		JButton btnInsertar = new JButton("Insertar");
 		btnInsertar.setFont(new Font("Tahoma", Font.PLAIN, 12));
-	
+		/**
+		 * Cuando el usuario pulsa el boton de insertar, se recogen todos los datos ingresados 
+		 * y se introducen en la base de datos.
+		 * Cuando se pulsa el boton insertar aparece un cuadro de confirmación.
+		 * 
+		 * @author Rubén Castañares
+		 */
 		btnInsertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Producto productos = new Producto();
