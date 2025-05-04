@@ -1,15 +1,22 @@
-package modelo;
+package JunitTests;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import modelo.Producto;
+
 class ProductoTest {
+	
+    private Producto producto;
+
+    @BeforeEach
+    void setUp() {
+        producto = new Producto();
+    }
 
     @Test
-    public void testConstructorPorDefecto() {
-        Producto producto = new Producto();
-
+    void testConstructorPorDefecto() {
         assertEquals(0, producto.getIdProducto());
         assertEquals("ERROR", producto.getNombre());
         assertEquals(-1, producto.getCantidad());
@@ -18,8 +25,8 @@ class ProductoTest {
     }
 
     @Test
-    public void testConstructorConParametros() {
-        Producto producto = new Producto(1, "Producto A", 100, 20.5f, 10);
+    void testConstructorConParametros() {
+        producto = new Producto(1, "Producto A", 100, 20.5f, 10);
 
         assertEquals(1, producto.getIdProducto());
         assertEquals("Producto A", producto.getNombre());
@@ -29,9 +36,7 @@ class ProductoTest {
     }
 
     @Test
-    public void testSettersYGetters() {
-        Producto producto = new Producto();
-
+    void testSettersYGetters() {
         producto.setIdProducto(2);
         producto.setNombre("Producto B");
         producto.setCantidad(200);
