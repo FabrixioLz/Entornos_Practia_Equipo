@@ -1,21 +1,23 @@
-create database bdinventario;
-use bdinventario;
-
-CREATE TABLE producto(
-	idProducto INT auto_increment PRIMARY KEY,
-	nombre VARCHAR(50),
-	cantidad INT, 
-	precio DECIMAL(6,2),
-	idProveedor INT,
-	FOREIGN KEY (idProveedor) REFERENCES Proveedor(IdProveedor));
+CREATE DATABASE bdinventario;
+USE bdinventario;
 
 CREATE TABLE Proveedor(
-	IdProveedor INT auto_increment PRIMARY KEY,
-	nombre VARCHAR(50),
-	tipo VARCHAR(50),
-	direccion VARCHAR(50),
-	telefono INT,
-	dni VARCHAR(9));
+    IdProveedor INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    tipo VARCHAR(50),
+    direccion VARCHAR(50),
+    telefono VARCHAR(15),
+    dni VARCHAR(9)
+);
+
+CREATE TABLE producto(
+    idProducto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    cantidad INT, 
+    precio DECIMAL(6,2),
+    idProveedor INT,
+    FOREIGN KEY (idProveedor) REFERENCES Proveedor(IdProveedor)
+);
 	
 // abastecedor, provisor, suministrador, distribuidor, administrador, agente (tipos de proveedores, para escribir al probar)
 
