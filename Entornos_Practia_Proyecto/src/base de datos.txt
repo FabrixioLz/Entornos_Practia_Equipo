@@ -1,28 +1,26 @@
 create database bdinventario;
 use bdinventario;
 
-CREATE TABLE producto(
-	idProducto INT auto_increment PRIMARY KEY,
-	nombre VARCHAR(50),
-	cantidad INT, 
-	precio DECIMAL(6,2),
-	idProveedor INT,
-	FOREIGN KEY (idProveedor) REFERENCES Proveedor(IdProveedor));
-
 CREATE TABLE Proveedor(
-	IdProveedor INT auto_increment PRIMARY KEY,
-	nombre VARCHAR(50),
-	tipo VARCHAR(50),
-	direccion VARCHAR(50),
-	telefono INT,
-	dni VARCHAR(9));
+    IdProveedor INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    tipo VARCHAR(50),
+    direccion VARCHAR(50),
+    telefono VARCHAR(15),
+    dni VARCHAR(9));
+
+CREATE TABLE producto(
+    idProducto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    cantidad INT, 
+    precio DECIMAL(6,2),
+    idProveedor INT,
+    FOREIGN KEY (idProveedor) REFERENCES Proveedor(IdProveedor));
 	
 // abastecedor, provisor, suministrador, distribuidor, administrador, agente (tipos de proveedores, para escribir al probar)
 
 /* cuando se pruebe el panel de borrar, no se puede borrar un proveedor si existe algun producto que es distribuido por ese proveedor,
-para borrarlo primero hay que borrar los productos que gestiona, si no estos productos se quedarían en el aire, lo mismo para insertar, 
+para borrarlo primero hay que borrar los productos que gestiona, lo mismo para insertar, 
 primero se insertan los proveedores y luego los productos que gestiona, si no da error por que es clave foránea*/
 
-//por si quereis provarlo, con esta consulta por ejemplo: select nombre from producto where idProveedor = 3; para ver los productos que tiene 
-//cada proveedor
 

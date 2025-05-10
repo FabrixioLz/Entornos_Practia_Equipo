@@ -28,7 +28,6 @@ public class PanelConsultarProveedor extends JPanel {
 	private JTable tableProveedores;
 	private JComboBox comboBoxTipoProveedores;
 	DefaultTableModel modeloTabla = new DefaultTableModel();
-	private JTable table;
 	private JLabel lblNewLabel;
 
 	/**
@@ -63,7 +62,7 @@ public class PanelConsultarProveedor extends JPanel {
 		tableProveedores.setForeground(new Color(0, 0, 255));
 		scrollPane.setViewportView(tableProveedores);
 
-		modeloTabla.setColumnIdentifiers(new Object[] { "Nombre", "dni", "Direccion", "Tipo", "Telefono", "IdProveedor" });
+		modeloTabla.setColumnIdentifiers(new Object[] { "Nombre", "DNI", "Dirección", "Tipo", "Teléfono", "IdProveedor" });
 		tableProveedores.setModel(modeloTabla);
 		
 		lblNewLabel = new JLabel("CONSULTA DE PROVEEDORES");
