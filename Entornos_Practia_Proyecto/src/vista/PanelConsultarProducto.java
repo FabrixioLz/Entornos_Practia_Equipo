@@ -51,6 +51,7 @@ public class PanelConsultarProducto extends JPanel {
 				cargaTabla(arrProductos);
 			}
 		});
+		
 		comboBoxProductos.setBounds(177, 81, 208, 22);
 		add(comboBoxProductos);
 		
@@ -72,7 +73,6 @@ public class PanelConsultarProducto extends JPanel {
 		
 		cargaCombo();
 		
-
 	}
 	/**
 	 * Se cargan los datos del producto en la tabla.
@@ -87,6 +87,7 @@ public class PanelConsultarProducto extends JPanel {
 			modeloTabla.addRow(new Object[] { p.getIdProducto(), p.getNombre(), p.getCantidad(), p.getPrecio(), p.getIdProveedor() });
 		}
 	}
+	
 	/**
 	 * El JComboBox se carga con los nombres de los productos de la base de datos.
 	 * 

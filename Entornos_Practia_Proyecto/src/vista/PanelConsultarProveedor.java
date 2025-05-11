@@ -22,6 +22,7 @@ import java.awt.Font;
  * 
  * @author Rubén Castañares
  */
+
 public class PanelConsultarProveedor extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -86,6 +87,7 @@ public class PanelConsultarProveedor extends JPanel {
 					pdor.getTelefono(), pdor.getIdProveedor() });
 		}
 	}
+	
 	/**
 	 * El JComboBox se carga con los tipos de los proveedores de la base de datos.
 	 * 
