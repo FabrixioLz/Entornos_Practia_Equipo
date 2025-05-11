@@ -1,5 +1,5 @@
-create database bdinventario;
-use bdinventario;
+CREATE DATABASE bdinventario;
+USE bdinventario;
 
 CREATE TABLE Proveedor(
     IdProveedor INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,7 +16,7 @@ CREATE TABLE producto(
     precio DECIMAL(6,2),
     idProveedor INT,
     FOREIGN KEY (idProveedor) REFERENCES Proveedor(IdProveedor));
-	
+
 // abastecedor, provisor, suministrador, distribuidor, administrador, agente (tipos de proveedores, para escribir al probar)
 
 /* cuando se pruebe el panel de borrar, no se puede borrar un proveedor si existe algun producto que es distribuido por ese proveedor,
